@@ -148,9 +148,9 @@
 
   // Testimonials carousel (uses the Owl Carousel library)
   $(".testimonials-carousel").owlCarousel({
-    autoplay: true,
+    autoplay: false,
     dots: true,
-    loop: true,
+    loop: false,
     responsive: {
       0: {
         items: 1
@@ -159,7 +159,7 @@
         items: 1
       },
       900: {
-        items: 2
+        items: 1
       }
     }
   });
@@ -209,3 +209,133 @@
   });
 
 })(jQuery);
+
+
+
+let audio_MF=["spk1-1.wav","spk1-multi.wav","spk2-1.wav","spk2-2.wav",
+"spk2-multi.wav","spk3-1.wav","spk3-2.wav","spk3-3.wav","spk3-multi.wav"];
+let audio_MF_G=["G1.wav","G2.wav","G3.wav"];
+let audio_CPGnoP=["no_1_1.wav","no_1_2.wav","yes_1_1.wav","yes_1_2.wav",
+                    "no_3_1.wav","no_3_2.wav","yes_3_1.wav","yes_3_2.wav",
+                    "no_10_1.wav","no_10_2.wav","yes_10_1.wav","yes_10_2.wav"];
+let audio_CPGnoP_G=["G_1_1.wav","G_1_2.wav",
+  "G_3_1.wav","G_3_2.wav",
+  "G_10_1.wav","G_10_2.wav"];
+
+let audio_CPGPiggy=["no_piggy_1_1.wav","no_piggy_1_2.wav","piggy_1_1.wav","piggy_1_2.wav",
+  "no_piggy_3_1.wav","no_piggy_3_2.wav","piggy_3_1.wav","piggy_3_2.wav",
+  "no_piggy_10_1.wav","no_piggy_10_2.wav","piggy_10_1.wav","piggy_10_2.wav"];
+let audio_CPGPiggy_G=["G_1_1.wav","G_1_2.wav",
+  "G_3_1.wav","G_3_2.wav",
+  "G_10_1.wav","G_10_2.wav"];
+
+$(document).ready(function () {
+  index=0;
+  for(var i=0;i<audio_MF.length;i++){
+    let content="<div class=\'example"
+        +i.toString()
+        +"\'>\
+        <p style=\'margin-left: 15px;\'>\
+        <i class=\'icofont-label\' style=\'color: #3498db;\'></i>"
+        +audio_MF[i]
+        +"</p>\
+        <audio>\
+        <source src=\'assets/audio/Multitask_Finetune/"
+        +audio_MF[i]
+        +"\'"+"type=\'audio/mpeg'></audio></div>";
+
+    $("#audio_list1").append(content);
+    new GreenAudioPlayer('.example'+i.toString());
+  }
+
+  index+=audio_MF.length;
+  for(var i=0;i<audio_MF_G.length;i++){
+    let content="<div class=\'example"
+        +(i+index).toString()
+        +"\'>\
+        <p style=\'margin-left: 15px;\'>\
+        <i class=\'icofont-label\' style=\'color: #3498db;\'></i>"
+        +audio_MF_G[i]
+        +"</p>\
+        <audio>\
+        <source src=\'assets/audio/Multitask_Finetune/"
+        +audio_MF_G[i]
+        +"\'"+"type=\'audio/mpeg'></audio></div>";
+
+    $("#audio_list2").append(content);
+    new GreenAudioPlayer('.example'+(i+index).toString());
+  }
+
+  index+=audio_MF_G.length;
+  for(var i=0;i<audio_CPGnoP.length;i++){
+    let content="<div class=\'example"
+        +(i+index).toString()
+        +"\'>\
+        <p style=\'margin-left: 15px;\'>\
+        <i class=\'icofont-label\' style=\'color: #3498db;\'></i>"
+        +audio_CPGnoP[i]
+        +"</p>\
+        <audio>\
+        <source src=\'assets/audio/CPG_no_pruning/"
+        +audio_CPGnoP[i]
+        +"\'"+"type=\'audio/mpeg'></audio></div>";
+
+    $("#audio_list3").append(content);
+    new GreenAudioPlayer('.example'+(i+index).toString());
+  }
+
+  index+=audio_CPGnoP.length;
+  for(var i=0;i<audio_CPGnoP_G.length;i++){
+    let content="<div class=\'example"
+        +(i+index).toString()
+        +"\'>\
+        <p style=\'margin-left: 15px;\'>\
+        <i class=\'icofont-label\' style=\'color: #3498db;\'></i>"
+        +audio_CPGnoP_G[i]
+        +"</p>\
+        <audio>\
+        <source src=\'assets/audio/CPG_no_pruning/"
+        +audio_CPGnoP_G[i]
+        +"\'"+"type=\'audio/mpeg'></audio></div>";
+
+    $("#audio_list4").append(content);
+    new GreenAudioPlayer('.example'+(i+index).toString());
+  }
+
+  index+=audio_CPGnoP_G.length;
+  for(var i=0;i<audio_CPGPiggy.length;i++){
+    let content="<div class=\'example"
+        +(i+index).toString()
+        +"\'>\
+        <p style=\'margin-left: 15px;\'>\
+        <i class=\'icofont-label\' style=\'color: #3498db;\'></i>"
+        +audio_CPGPiggy[i]
+        +"</p>\
+        <audio>\
+        <source src=\'assets/audio/CPG_no_piggy/"
+        +audio_CPGPiggy[i]
+        +"\'"+"type=\'audio/mpeg'></audio></div>";
+
+    $("#audio_list5").append(content);
+    new GreenAudioPlayer('.example'+(i+index).toString());
+  }
+
+  index+=audio_CPGPiggy.length;
+  for(var i=0;i<audio_CPGPiggy_G.length;i++){
+    let content="<div class=\'example"
+        +(i+index).toString()
+        +"\'>\
+        <p style=\'margin-left: 15px;\'>\
+        <i class=\'icofont-label\' style=\'color: #3498db;\'></i>"
+        +audio_CPGPiggy_G[i]
+        +"</p>\
+        <audio>\
+        <source src=\'assets/audio/CPG_no_piggy/"
+        +audio_CPGPiggy_G[i]
+        +"\'"+"type=\'audio/mpeg'></audio></div>";
+
+    $("#audio_list6").append(content);
+    new GreenAudioPlayer('.example'+(i+index).toString());
+  }
+
+});

@@ -1592,3 +1592,11 @@ section {
 #footer .footer-links a:hover {
   color: #3498db;
 }
+
+.download_block{
+  position: absolute;
+  font-size: 20px;
+  line-height: 63px;
+  margin-left: 25px;
+  padding-left: 25px;
+}
