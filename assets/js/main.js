@@ -229,6 +229,14 @@ let audio_CPGPiggy_G=["G_1_1.wav","G_1_2.wav",
   "G_3_1.wav","G_3_2.wav",
   "G_10_1.wav","G_10_2.wav"];
 
+let audio_CPGnew=["normal_1_1.wav","normal_1_2.wav","new_1_1.wav","new_1_2.wav",
+  "normal_3_1.wav","normal_3_2.wav","new_3_1.wav","new_3_2.wav",
+  "normal_10_1.wav","normal_10_2.wav","new_10_1.wav","new_10_2.wav"];
+let audio_CPGnew_G=["G_1_1.wav","G_1_2.wav",
+  "G_3_1.wav","G_3_2.wav",
+  "G_10_1.wav","G_10_2.wav"];
+
+
 $(document).ready(function () {
   index=0;
   for(var i=0;i<audio_MF.length;i++){
@@ -317,6 +325,42 @@ $(document).ready(function () {
         +"\'"+"type=\'audio/mpeg'></audio></div>";
 
     $("#audio_list5").append(content);
+    new GreenAudioPlayer('.example'+(i+index).toString());
+  }
+
+  index+=audio_CPGPiggy.length;
+  for(var i=0;i<audio_CPGnew.length;i++){
+    let content="<div class=\'example"
+        +(i+index).toString()
+        +"\'>\
+        <p style=\'margin-left: 15px;\'>\
+        <i class=\'icofont-label\' style=\'color: #3498db;\'></i>"
+        +audio_CPGnew[i]
+        +"</p>\
+        <audio>\
+        <source src=\'assets/audio/CPG_new/"
+        +audio_CPGnew[i]
+        +"\'"+"type=\'audio/mpeg'></audio></div>";
+
+    $("#audio_list7").append(content);
+    new GreenAudioPlayer('.example'+(i+index).toString());
+  }
+
+  index+=audio_CPGnew.length;
+  for(var i=0;i<audio_CPGnew_G.length;i++){
+    let content="<div class=\'example"
+        +(i+index).toString()
+        +"\'>\
+        <p style=\'margin-left: 15px;\'>\
+        <i class=\'icofont-label\' style=\'color: #3498db;\'></i>"
+        +audio_CPGnew_G[i]
+        +"</p>\
+        <audio>\
+        <source src=\'assets/audio/CPG_new/"
+        +audio_CPGnew_G[i]
+        +"\'"+"type=\'audio/mpeg'></audio></div>";
+
+    $("#audio_list8").append(content);
     new GreenAudioPlayer('.example'+(i+index).toString());
   }
 
